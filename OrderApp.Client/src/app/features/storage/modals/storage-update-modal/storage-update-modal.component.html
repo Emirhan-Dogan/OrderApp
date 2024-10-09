@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Depo</h2>
+<mat-dialog-content>
+  <form [formGroup]="storageForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <mat-form-field appearance="fill" class="col-12">
+            <mat-label>Depo Adı</mat-label>
+            <input matInput type="text" formControlName="name" >
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Ülke</mat-label>
+            <mat-select formControlName="country">
+              @for (country of countries; track $index) {
+                <mat-option [value]="country.id">{{country.name}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Şehir</mat-label>
+            <mat-select formControlName="city" >
+              @for (city of showCities; track $index) {
+                <mat-option [value]="city.id">{{city.name}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="fill" class="col-12">
+            <mat-label>Adres Detay</mat-label>
+            <input matInput type="text" formControlName="addressDetail" >
+        </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close color="warn">İptal</button>
+    <button mat-button color="primary" cdkFocusInitial (click)="onSubmit()">Güncelle</button>
+  </mat-dialog-actions>
+  

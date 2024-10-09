@@ -1,0 +1,84 @@
+<h2 mat-dialog-title>Sipariş</h2>
+<mat-dialog-content>
+  <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="w-100">
+          <mat-label>Müşteri</mat-label>
+          <mat-select formControlName="customer">
+            @for (customer of customers; track $index) {
+              <mat-option [value]="customer.id">{{customer.user.fullName}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Sipariş Tarihi</mat-label>
+          <input matInput type="date" formControlName="dateOfReceipt">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Sipariş Durumu</mat-label>
+          <mat-select formControlName="deliveryStatus">
+            <mat-option *ngFor="let status of deliveryStatus; let i = index" [value]="deliveryStatusValues[i]">
+              {{ status }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Toplam Fiyat</mat-label>
+          <input matInput type="text" readonly formControlName="totalPrice" [(ngModel)]="totalPrice">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row col-12">
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Sipariş Notu</mat-label>
+        <input matInput type="text" formControlName="deliveryNotes">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn" style="background-color: #3F51B5; color: white;" type="button" (click)="addItem()">
+          <i class="fa-solid fa-plus"></i>
+          Ürün Ekle
+        </button>
+      </div>
+    </div>
+  <div class="table-product">
+    <div formArrayName="products">
+      <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i" class="form-row">
+        <div class="row" style="padding: 5px;">
+          <div class="col-md-5">
+            <mat-form-field appearance="fill" style="padding-right: 10px; width: 100%;">
+              <mat-label>Ürün Kodu</mat-label>
+              <input matInput type="text" readonly formControlName="productCode">
+            </mat-form-field>
+          </div>
+          <div class="col-md-5">
+            <mat-form-field appearance="fill" style="width: 100%;">
+              <mat-label>Ürün Adedi</mat-label>
+              <input matInput type="text" formControlName="productQuantity">
+            </mat-form-field>
+          </div>
+          <div class="col-md-2 d-flex align-items-center">
+            <button class="btn btn-danger" (click)="removeProduct(i)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </div>        
+      </div>
+    </div>  
+  </div>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close color="warn">İptal</button>
+  <button mat-button color="primary" cdkFocusInitial (click)="onSubmit()">Kaydet</button>
+</mat-dialog-actions>

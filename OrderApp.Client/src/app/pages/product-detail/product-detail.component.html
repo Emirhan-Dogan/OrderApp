@@ -1,0 +1,98 @@
+<div class="container product-detail">
+  <div class="row">
+    <div class="col-md-12 text-end">
+      @if(checkClaim('UpdateProductCommand')){
+        <button class="btn btn-warning m-1" (click)="updateProduct(product!.id)">
+          <i class="fas fa-edit"></i>
+          Güncelle
+        </button>
+      }
+      @if(checkClaim('DeleteProductCommand')){
+        <button class="btn btn-danger m-1" (click)="deleteProduct(product!.id)">
+          <i class="fas fa-trash-alt"></i> Sil
+        </button>
+      }
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <img
+        [src]="'https://localhost:5001/api/Image/getimage?imageName=' + product!.imagePath"
+        alt="Product Image"
+        class="product-image"
+      />
+    </div>
+    <div class="col-md-6">
+      <!-- Breadcrumb Navigation with Icons -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/">
+              <i class="fas fa-home"></i> Home
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a>
+              <i class="fas fa-tags"></i> {{ product!.category.name }}
+            </a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <i class="fas fa-box-open"></i> {{ product!.name }}
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Product Name -->
+      <h1 class="product-name pt-3">
+        <i class="fas fa-box"></i> {{ product!.name }}
+      </h1>
+      <!-- Product Description -->
+      <p class="product-description">
+        {{ product!.description }}
+      </p>
+
+      <!-- Product Meta Information -->
+      <div class="product-meta">
+        <span>
+          <i class="fas fa-barcode pt-3"></i>
+          <strong style="font-size: medium; padding-left: 7px;" >{{ product!.productCode }}</strong>
+        </span><br />
+        <span>
+          <i class="fas fa-th-list pt-3"></i> Kategori:
+          <strong style="font-size: large;">{{ product!.category.name }}</strong>
+        </span><br />
+        <span>
+          <i
+            class="fas fa-palette fa-2x pt-3"
+            [ngStyle]="{ 'color': product!.color.colorCode }"
+            style="padding: 5px; border-radius: 50%; width: 40px;"
+          ></i>
+          <strong [ngStyle]="{'color':product!.color.colorCode}" style="font-size: large;">{{ product!.color.colorName }}</strong>
+        </span>
+        
+      </div>
+
+      <!-- Product Price -->
+      <p class="product-price pt-3">
+        <i class="fa-solid fa-turkish-lira-sign"></i> {{ product!.price }}
+      </p>
+
+      
+
+      <!-- Stock Status Badge -->
+      <p>
+        <span
+          class="badge badge-status"
+          [ngClass]="product!.stockCount > 0 ? 'in-stock' : 'out-of-stock'"
+        >
+          <i
+            class="fas"
+            [ngClass]="product!.stockCount > 0 ? 'fa-check-circle' : 'fa-times-circle'"
+          ></i>
+          {{ product!.stockCount > 0 ? 'Stokta Var: ' : 'Stoklar Tükendi: ' }}
+          {{product!.stockCount}}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<mat-sidenav mode="side" opened class="example-container p-2">
+  <div class="user-info">
+    <img class="user-avatar" src="https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" alt="User Avatar">
+    <div class="user-details">
+      <div class="user-name">{{userName}}</div>
+      <div class="user-role">{{userEmail}}</div>
+    </div>
+  </div>
+  <mat-nav-list>
+    <div class="nav-section">
+      <mat-label>Başlangıç</mat-label>
+    </div>
+    <mat-list-item routerLink="/">
+      <i class="fas fa-home nav-icon"></i>
+      <span class="nav-text">Ana Sayfa</span>
+    </mat-list-item>
+    @if(checkClaim('GetProductsQuery')){
+      <mat-list-item routerLink="/products">
+        <i class="fas fa-box nav-icon"></i>
+        <span class="nav-text">Ürün</span>
+      </mat-list-item>
+    }
+    @if(checkClaim('GetOrdersQuery')){
+      <mat-list-item routerLink="/orders">
+        <i class="fas fa-shopping-basket nav-icon"></i>
+        <span class="nav-text">Sipariş</span>
+      </mat-list-item>
+    }
+    @if(checkClaim('GetStoragesQuery')){
+      <mat-list-item routerLink="/storages">
+        <i class="fas fa-warehouse nav-icon"></i>
+        <span class="nav-text">Depo</span>
+      </mat-list-item>
+    }
+    @if(checkClaim('GetCustomersQuery')){
+      <mat-list-item routerLink="/customers">
+        <i class="fas fa-user nav-icon"></i>
+        <span class="nav-text">Müşteri</span>
+      </mat-list-item>
+    }
+    @if(checkClaim('GetUsersQuery')){
+      <div class="nav-section">
+        <mat-label>Yetkilendirme</mat-label>
+      </div>
+      <mat-list-item routerLink="/user-claims" >
+        <i class="fas fa-key nav-icon"></i>
+        <span class="nav-text">Yetkilendirme</span>
+      </mat-list-item>
+    }
+  </mat-nav-list>
+</mat-sidenav>

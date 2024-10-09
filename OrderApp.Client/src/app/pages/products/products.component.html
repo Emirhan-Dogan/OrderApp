@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex justify-content-between mb-3 p-3">
+          <!-- Add Order Button -->
+           @if(checkClaim('CreateProductCommand')){
+            <button class="btn btn-primary" (click)="productCreateModal()">
+              <i class="fas fa-plus"></i> Ürün Oluştur
+            </button>
+           }
+          <!-- Breadcrumb -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item">Ürün</li>
+              <li class="breadcrumb-item active" aria-current="page">Liste</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="row g-3">
+          <!-- Ürün Kartı -->
+          @for (product of products; track $index) {
+          <div class="col-md-2 col-lg-2 mb-4 product-card">
+            <div class="card h-100">
+              <img
+                [src]="
+                  'https://localhost:5001/api/Image/getimage?imageName=' +
+                  product.imagePath
+                "
+                class="card-img-top"
+                alt="Product"
+              />
+              <div class="card-body" style="margin: 5px;">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">Stok: {{ product.stockCount }}</p>
+                <p class="card-text">Fiyat: {{ product.price }}</p>
+                <button
+                  class="btn btn-primary"
+                  (click)="productDetail(product.id)"
+                >
+                  Daha Fazla
+                </button>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+                     
+      </div>
+    </div>
+  </div>
+</div>
+<div class="load-more-container">
+  <!-- Önceki Sayfa Butonu -->
+  <button class="load-more-btn previous" (click)="loadBeforePage()" [disabled]="!hasBeforeProducts">
+    <i class="fas fa-arrow-left"></i> 
+  </button>
+  
+  <!-- Sayfa Numarası Gösterge Alanı -->
+  <div class="page-number">
+    {{ page }}
+  </div>
+
+  <!-- Sonraki Sayfa Butonu -->
+  <button class="load-more-btn next" (click)="loadAfterPage()" [disabled]="!hasAfterProducts">
+    <i class="fas fa-arrow-right"></i> 
+  </button>
+</div>

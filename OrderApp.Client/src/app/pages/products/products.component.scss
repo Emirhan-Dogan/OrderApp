@@ -1,0 +1,94 @@
+.product-card {
+  flex: 0 0 calc(20% - 15px); /* 20% genişlik - aralığı ayarlayın */
+  margin-bottom: 10px; /* Düşey boşluk */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Sayfanın sağ alt köşesine butonları yerleştir */
+.load-more-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Buton stili */
+.load-more-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.load-more-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Sayfa numarasının bulunduğu kutu */
+.page-number {
+  font-size: 18px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* Font Awesome ikonu için butonun içindeki stil */
+.load-more-btn i {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+/* Butonlar */
+.load-more-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  //transition: background-color 0.3s;
+  transition: background-color 0.5s ease; /* Geçiş efekti */
+}
+
+/* Buton hover durumu */
+.load-more-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Disabled butonlar */
+.load-more-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Sayfa numarası kutusu */
+.page-number {
+  font-size: 18px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+/* Buton Animasyonu için Stil */
+.load-more-btn.animate-button {
+  background-color: pink !important; /* Arka plan rengini pembe yap */
+  transition: background-color 0.2s ease; /* Geçiş efekti */
+}
+
+

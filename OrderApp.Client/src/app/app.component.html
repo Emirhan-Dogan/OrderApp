@@ -1,0 +1,20 @@
+@if(showHeader){
+  <mat-sidenav-container class="example-container">
+  
+    <mat-sidenav #sidenav mode="side" opened>
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <app-header (menuToggle)="sidenav.toggle()"></app-header>
+      
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+}@else {
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+}

@@ -1,0 +1,26 @@
+.status-container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+.status-active {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #28a745; 
+    color: white;
+    font-weight: normal;
+    text-align: center;
+  }
+  
+  .status-inactive {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #dc3545; 
+    color: white;
+    font-weight: normal;
+    text-align: center;
+  }
+  

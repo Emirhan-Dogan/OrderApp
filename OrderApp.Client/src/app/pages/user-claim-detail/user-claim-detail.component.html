@@ -1,0 +1,55 @@
+<div>
+  <div class="user-card">
+    <div class="row">
+      <div class="col-md-4">
+        <img *ngIf="user?.imagePath" [src]="'https://localhost:5001/api/Image/getimage?imageName=' + user!.imagePath" alt="User Image">
+      </div>
+      <div class="col-md-8">
+        <h2>
+          <i class="fas fa-user fa-2x" style="font-size: 1.5em; color: #007bff;"></i> 
+          {{user!.fullName}}
+        </h2>
+        <p class="pt-3">
+          <i class="fas fa-envelope" style="font-size: 1.5em; color: #28a745;"></i> 
+          {{user!.email}}
+        </p>
+        <p class="pt-3">
+          <i class="fas fa-phone" style="font-size: 1.5em; color: #17a2b8;"></i> 
+          {{user!.mobilePhones}}
+        </p>
+        <p class="pt-3">
+          <i class="fas fa-map-marker-alt" style="font-size: 1.5em; color: #dc3545;"></i> 
+          {{user!.address}}
+        </p>          
+        <p class="pt-3">
+          <i class="fas fa-{{user!.gender === 1 ? 'male' : 'female'}}" 
+             [style.color]="user!.gender === 1 ? 'blue' : 'pink'" 
+             style="font-size: 1.5em;"></i> 
+          {{user!.gender === 1 ? 'Erkek' : 'Kadın'}}
+        </p>
+        <p class="pt-3">
+          <i class="fas fa-{{user!.status ? 'check-circle' : 'times-circle'}}" 
+             [style.color]="user!.status ? 'green' : 'red'" 
+             style="font-size: 1.5em;"></i> 
+          {{user!.status ? 'Aktif' : 'Pasif'}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row p-3">
+  <div class="col-md-4">
+    <form #frm="ngForm" (ngSubmit)="addUserClaim(frm, user!.userId)">
+      <mat-form-field class="w-100">
+        <mat-label>Yetki</mat-label>
+        <mat-select name="claim" [(ngModel)]="groupId" required>
+          <mat-option *ngFor="let role of roles" [value]="role.id">{{role.groupName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <button class="btn btn-primary" type="submit" (click)="addUserClaim(frm, user!.userId)">Yetki tanımla</button>
+  </div>
+</div>
+<!-- 
+{{user | json}}
+{{userId}} -->

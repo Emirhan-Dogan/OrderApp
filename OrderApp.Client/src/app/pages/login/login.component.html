@@ -1,0 +1,25 @@
+<div class="login-container">
+  <div class="logo">
+    <img src="assets/images/logo.webp" alt="Company Logo" />
+  </div>
+  <h2>Giriş Yap</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput id="email" formControlName="email" />
+        <mat-error *ngIf="loginForm.controls['email'].hasError('required')">Bu alan boş geçilemez.</mat-error>
+        <mat-error *ngIf="loginForm.controls['email'].hasError('email')">Geçerli bir email giriniz.</mat-error>
+
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Şifre</mat-label>
+        <input type="password" matInput id="password" formControlName="password" />
+        <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Bu alan boş geçilemez.</mat-error>
+      </mat-form-field>
+    </div>
+    <button type="submit" class="login-btn">Giriş Yap</button>
+  </form>
+</div>

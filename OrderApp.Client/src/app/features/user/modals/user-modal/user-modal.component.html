@@ -1,0 +1,61 @@
+<h2 mat-dialog-title>Kullanıcı</h2>
+<mat-dialog-content>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-5">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Adı</mat-label>
+          <input matInput type="text" formControlName="fullName">
+        </mat-form-field>
+      </div>
+      <div class="col-md-7">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Telefon</mat-label>
+          <input matInput type="tel" formControlName="mobilePhones">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>E-posta</mat-label>
+          <input matInput type="email" formControlName="email">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Doğum Tarihi</mat-label>
+          <input matInput type="date" formControlName="birthDate">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Cinsiyet</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option value="0">Kadın</mat-option>
+            <mat-option value="1">Erkek</mat-option>
+            <mat-option value="2">Diğer</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Adres</mat-label>
+          <input matInput type="text" formControlName="addressDetail">
+        </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="col-12 mat-input">
+          <mat-label>Resim</mat-label>
+        <input type="file" id="fileInput"  (change)="onFileSelected($event)"> 
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close color="warn">İptal</button>
+  <button mat-button color="primary" cdkFocusInitial (click)="onSubmit()">Kaydet</button>
+</mat-dialog-actions>

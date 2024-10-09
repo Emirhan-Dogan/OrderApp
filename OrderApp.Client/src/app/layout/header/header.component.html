@@ -1,0 +1,27 @@
+<!-- app.component.html -->
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Sipariş Sistemi</span>
+
+  <span class="spacer"></span>
+
+  <!-- Bildirimler İkonu -->
+  <button mat-icon-button>
+    <mat-icon>notifications</mat-icon>
+  </button>
+
+  <!-- Profil İkonu ve Menü -->
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="profileMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="profileMenuButton">
+      <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profilim</a></li>
+      <!-- <li><a class="dropdown-item" href="#"><i class="fas fa-cogs"></i> Ayarlar</a></li> -->
+      <li><hr class="dropdown-divider"></li>
+      <li (click)="logout()"><a class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+    </ul>
+  </div>
+</mat-toolbar>

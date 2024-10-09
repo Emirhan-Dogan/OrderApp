@@ -1,0 +1,22 @@
+.row {
+    display: flex;
+    align-items: center; /* Yükseklikleri hizalar */
+  }
+  
+  .col-md-5, .col-md-2 {
+    padding-right: 5px; /* Alanlar arasında biraz boşluk */
+  }
+  
+  .btn {
+    margin-top: 0; /* Butonun yukarıya kaymasını engeller */
+    margin-bottom: 0; /* Butonun aşağıya kaymasını engeller */
+  }
+  
+  .mat-form-field {
+    margin-bottom: 0; /* Form alanları arasındaki boşluğu azaltır */
+  }
+  
+  .mat-form-field .mat-form-field-infix {
+    padding: 0; /* Form alanının içindeki boşluğu azaltır */
+  }
+  

@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Sipariş</h2>
+<mat-dialog-content>
+    <div class="row">
+        <!-- Product Card -->
+          @for (product of products; track $index) {
+          <div class="col-md-4 col-lg-3 mb-4">
+            <div class="card h-100">
+              <img
+                [src]="'https://localhost:5001/api/Image/getimage?imageName=' + product.imagePath"
+                class="card-img-top"
+                alt="Product"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">Stok: {{ product.stockCount }}</p>
+                <p class="card-text">Fiyat: {{ product.price }}</p>
+                <button
+                  class="btn btn-primary"
+                  (click)="addToBasket(product.id)"
+                >
+                  Sepete Ekle
+                </button>
+              </div>
+            </div>
+          </div>}
+      </div>
+      
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close color="warn">İptal</button>
+  <button mat-button mat-dialog-close color="primary" cdkFocusInitial>Sepete Ekle</button>
+</mat-dialog-actions>

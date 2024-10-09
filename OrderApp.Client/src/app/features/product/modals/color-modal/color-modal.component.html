@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Renk Tanımlama</h2>
+<mat-dialog-content>
+  <form [formGroup]="colorForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Renk Adı</mat-label>
+      <input matInput type="text" formControlName="colorName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Renk Seç</mat-label>
+      <input matInput type="color" formControlName="colorCode" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close color="warn">İptal</button>
+  <button mat-button color="primary" cdkFocusInitial (click)="onSubmit()">Kaydet</button>
+</mat-dialog-actions>

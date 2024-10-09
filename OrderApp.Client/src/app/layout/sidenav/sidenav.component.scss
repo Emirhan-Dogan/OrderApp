@@ -1,0 +1,61 @@
+.example-container {
+  width: 260px;
+  height: 100vh;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.user-role {
+  font-size: 0.875rem; /* Daha küçük yazı */
+  color: rgba(0, 0, 0, 0.7); /* Daha transparan */
+}
+
+mat-nav-list {
+  padding-top: 0;
+}
+
+mat-list-item {
+  display: flex;
+  height: 105px;
+  align-items: center;
+  padding: 0 16px; /* Daha iyi hizalama için */
+}
+
+.nav-icon {
+  font-size: 24px; /* İkon boyutu */
+  margin-right: 16px; /* İkon ile metin arasına boşluk bırakır */
+}
+
+.nav-text {
+  font-size: 16px; /* Metin boyutu */
+}
+
+mat-label {
+  font-size: 0.875rem; /* Daha küçük yazı */
+  color: rgba(0, 0, 0, 0.54); /* Daha transparan */
+  margin: 8px 0;
+}
+
+.nav-section {
+  margin: 16px 0;
+}

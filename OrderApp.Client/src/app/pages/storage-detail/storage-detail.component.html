@@ -1,0 +1,51 @@
+<div class="container storage-detail mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="storage-name">
+          <i class="fas fa-warehouse text-primary me-2"></i>{{ storage!.name }}
+        </h2>
+        <p class="storage-meta mt-3">
+          <i class="fas fa-map-marker-alt text-danger me-2"></i>
+          <strong></strong> {{ storage!.address.addressDetail }}, 
+          {{ storage!.address.city.name }}, 
+          {{ storage!.address.country.name }}
+          <br />
+          <i class="fas fa-calendar-alt text-info me-2"></i>
+          <strong>Kayıt:</strong> {{ storage!.address.dateOfReceipt | date:'mediumDate' }}
+        </p>
+      </div>
+    </div>
+  
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <h4>
+          <i class="fas fa-boxes text-success me-2"></i>Depodaki Ürünler
+        </h4>
+        <div class="row">
+            <!-- Product Card -->
+              @for (product of products; track $index) {
+              <div class="col-md-4 col-lg-3 mb-4">
+                <div class="card h-100">
+                  <img
+                    [src]="'https://localhost:5001/api/Image/getimage?imageName=' + product.imagePath"
+                    class="card-img-top"
+                    alt="Product"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">Stok: {{ product.stockCount }}</p>
+                    <p class="card-text">Fiyat: {{ product.price }}</p>
+                    <button
+                      class="btn btn-primary"
+                      (click)="productDetail(product.id)"
+                    >
+                      Daha Fazla
+                    </button>
+                  </div>
+                </div>
+              </div>}
+          </div>
+      </div>
+    </div>
+  </div>
+  
