@@ -1,0 +1,7 @@
+{
+  "Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\StajRealSolutions\\OrderApp.Service\\Business",
+  "Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\StajRealSolutions\\OrderApp.Service\\Core",
+  "DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\StajRealSolutions\\OrderApp.Service\\DataAccess",
+  "Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\StajRealSolutions\\OrderApp.Service\\Entities",
+  "WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\StajRealSolutions\\OrderApp.Service\\WebAPI"
+}

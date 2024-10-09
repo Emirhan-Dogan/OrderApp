@@ -1,0 +1,14 @@
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\bin\Debug\net7.0\UIPreparation.exe
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\bin\Debug\net7.0\UIPreparation.deps.json
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\bin\Debug\net7.0\UIPreparation.runtimeconfig.json
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\bin\Debug\net7.0\UIPreparation.dll
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\bin\Debug\net7.0\UIPreparation.pdb
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\obj\Debug\net7.0\UIPreparation.GeneratedMSBuildEditorConfig.editorconfig
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\obj\Debug\net7.0\UIPreparation.AssemblyInfoInputs.cache
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\obj\Debug\net7.0\UIPreparation.AssemblyInfo.cs
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\obj\Debug\net7.0\UIPreparation.csproj.CoreCompileInputs.cache
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\obj\Debug\net7.0\UIPreparation.dll
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\obj\Debug\net7.0\refint\UIPreparation.dll
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\obj\Debug\net7.0\UIPreparation.pdb
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\obj\Debug\net7.0\UIPreparation.genruntimeconfig.cache
+D:\StajRealSolutions\OrderApp.Service\UIPreparation\obj\Debug\net7.0\ref\UIPreparation.dll
